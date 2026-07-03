@@ -47,9 +47,9 @@ Foram identificados:
 * endereço IP de destino `8.8.8.8`;
 * protocolo ICMP encapsulado em IPv4;
 * campo TTL;
-* tipo ICMP `Echo Request (8)`;
-* tipo ICMP `Echo Reply (0)`;
-* código `0`.
+* tipo ICMP `Echo Request (8)` nas requisições;
+* tipo ICMP `Echo Reply (0)` nas respostas;
+* código ICMP `0`.
 
 Nos detalhes do pacote, foi possível visualizar as camadas:
 

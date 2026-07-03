@@ -30,7 +30,7 @@ Projeto em andamento.
 |---|---|---|
 | 00 | Ambiente e escopo do projeto | Concluído |
 | 01 | ICMP / Ping | Concluído |
-| 02 | DNS / nslookup | Pendente |
+| 02 | DNS / nslookup | Concluído |
 | 03 | ARP / Gateway | Pendente |
 | 04 | TCP Handshake | Pendente |
 | 05 | HTTP vs HTTPS | Pendente |
@@ -125,7 +125,6 @@ Essas perguntas são úteis em troubleshooting, investigação de incidentes, an
 
 ## Próximos passos
 
-- Documentar consultas DNS usando `nslookup`.
 - Analisar tráfego ARP relacionado ao gateway.
 - Observar o TCP Three-Way Handshake.
 - Comparar tráfego HTTP e HTTPS.
