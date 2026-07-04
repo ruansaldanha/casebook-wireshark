@@ -35,7 +35,7 @@ Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup e ARP/Ga
 | 01 | ICMP / Ping | Concluído |
 | 02 | DNS / nslookup | Concluído |
 | 03 | ARP / Gateway | Concluído |
-| 04 | TCP Handshake | Pendente |
+| 04 | TCP Handshake | Concluído |
 | 05 | HTTP vs HTTPS | Pendente |
 | 06 | DHCP | Pendente |
 | 07 | Conclusão geral | Pendente |
@@ -133,7 +133,6 @@ Essas perguntas são úteis em troubleshooting, investigação de incidentes, an
 
 ## Próximos passos
 
-- Observar o TCP Three-Way Handshake.
 - Comparar tráfego HTTP e HTTPS.
 - Observar o funcionamento básico do DHCP.
 - Registrar os principais aprendizados do projeto.

@@ -117,3 +117,42 @@ images/03-arp/03-arp-reply-detalhes.png
 ### Observação
 
 Durante a captura, foi observado tráfego ARP envolvendo o gateway e o host local. Como o endereço do gateway já estava presente na tabela ARP do host, a análise destacou um fluxo em que o gateway consultou o endereço MAC associado ao IP do host local, seguido pela resposta ARP correspondente.
+
+---
+
+## 04 - TCP Handshake
+
+### Objetivo
+
+Gerar tráfego TCP para observar o processo de estabelecimento de conexão por meio do Three-Way Handshake.
+
+### Comando utilizado
+
+```powershell
+curl.exe -4 http://example.com
+```
+
+### Filtro utilizado no Wireshark
+
+```text
+tcp.port == 80
+```
+
+### Arquivo de captura local
+
+```text
+captures-local/04-tcp-handshake.pcapng
+```
+
+### Evidências salvas
+
+```text
+images/04-tcp/01-tcp-filtro-aplicado.png
+images/04-tcp/02-tcp-syn-detalhes.png
+images/04-tcp/03-tcp-syn-ack-detalhes.png
+images/04-tcp/04-tcp-ack-detalhes.png
+```
+
+### Observação
+
+Durante a captura, foi possível observar a sequência `SYN`, `SYN, ACK` e `ACK`, que representa o TCP Three-Way Handshake. Após o estabelecimento da conexão, também apareceu tráfego HTTP relacionado à requisição feita com `curl.exe`.
