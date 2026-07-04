@@ -2,11 +2,15 @@
 
 ## Objetivo
 
-Este documento descreve o ambiente utilizado, o escopo do projeto e os cuidados adotados durante as análises de tráfego de rede.
+Este documento apresenta o ambiente utilizado, o escopo do projeto e os cuidados adotados durante as análises de tráfego de rede.
 
-O projeto tem como objetivo documentar capturas práticas no Wireshark, observando protocolos fundamentais de redes e relacionando cada análise com troubleshooting e segurança defensiva.
+A ideia deste projeto é praticar análise de pacotes no Wireshark a partir de capturas simples e controladas, observando protocolos fundamentais de redes e relacionando cada análise com troubleshooting e segurança defensiva.
+
+Este arquivo serve como ponto de partida para deixar claro onde as capturas foram feitas, quais limites foram definidos e quais cuidados de privacidade serão seguidos ao longo do projeto.
 
 ## Ambiente utilizado
+
+O ambiente principal utilizado nas análises é:
 
 - Sistema operacional: Windows
 - Ferramenta principal: Wireshark
@@ -16,7 +20,9 @@ O projeto tem como objetivo documentar capturas práticas no Wireshark, observan
 - Navegador utilizado: navegador web local
 - VPN: desativada durante capturas básicas, quando necessário
 
-Em etapas futuras, poderá ser utilizado um ambiente com máquina virtual Linux para testes mais controlados.
+A VPN foi mantida desligada nas capturas iniciais porque ela pode alterar o caminho do tráfego, usar interfaces virtuais ou encapsular pacotes, dificultando a visualização do comportamento esperado na interface Wi-Fi.
+
+Em etapas futuras, também poderá ser utilizado um ambiente com máquina virtual Linux para testes mais controlados.
 
 ## Protocolos e temas analisados
 
@@ -28,6 +34,8 @@ Neste projeto, serão analisados:
 - TCP Handshake
 - HTTP e HTTPS
 - DHCP
+
+A ordem das análises foi pensada para começar pelos fundamentos de conectividade e, aos poucos, avançar para comportamentos mais detalhados de comunicação em rede.
 
 ## Escopo
 
@@ -44,6 +52,8 @@ As análises terão como foco:
 - registro de evidências técnicas;
 - registro de aprendizados e observações relevantes.
 
+O foco não é apenas capturar pacotes, mas entender o que eles mostram e como esse tipo de análise pode ajudar na investigação de problemas de rede.
+
 ## Fora do escopo
 
 Este projeto não tem como objetivo:
@@ -55,13 +65,17 @@ Este projeto não tem como objetivo:
 - publicar capturas brutas contendo dados sensíveis;
 - realizar varreduras ofensivas em ambientes públicos.
 
+Todas as capturas serão feitas em ambiente próprio ou autorizado, com foco em aprendizado, troubleshooting e segurança defensiva.
+
 ## Cuidados de privacidade
 
 Arquivos de captura brutos, como `.pcap` e `.pcapng`, não serão publicados no repositório.
 
 Esses arquivos serão armazenados apenas localmente na pasta `captures-local/`, que está configurada no `.gitignore`.
 
-Quando necessário, informações como endereços MAC, IPs locais, nomes de dispositivos e outros identificadores poderão ser parcialmente ocultadas nos prints e na documentação.
+Quando necessário, informações como endereços MAC, IPs locais, nomes de dispositivos e outros identificadores serão parcialmente ocultadas nos prints e na documentação.
+
+A intenção é manter o valor técnico das evidências sem expor detalhes desnecessários da rede utilizada.
 
 ## Padrão de análise
 
@@ -79,6 +93,8 @@ Cada estudo seguirá, sempre que possível, o seguinte padrão:
 10. Aprendizados.
 11. Conclusão.
 
+Esse padrão ajuda a manter as análises organizadas e facilita a leitura de cada etapa do projeto.
+
 ## Perguntas-guia
 
 Durante as análises, o foco será responder perguntas como:
@@ -92,3 +108,14 @@ Existe resposta do destino?
 O comportamento observado é esperado?
 Como isso se relaciona com troubleshooting ou segurança defensiva?
 O que foi aprendido com essa captura?
+```
+
+Essas perguntas ajudam a transformar a captura em análise, evitando que o projeto seja apenas uma coleção de prints.
+
+## Relação com segurança defensiva
+
+A análise de tráfego é uma habilidade importante para áreas como suporte técnico, redes, NOC, Blue Team e SOC.
+
+Mesmo em capturas simples, como ICMP, DNS e ARP, já é possível praticar raciocínio investigativo: entender quem está se comunicando, qual protocolo está sendo usado, se houve resposta e se o comportamento observado faz sentido.
+
+Esse tipo de base é importante para troubleshooting, investigação de incidentes, análise de alertas e compreensão do comportamento normal de uma rede.

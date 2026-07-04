@@ -2,21 +2,24 @@
 
 ## Sobre o projeto
 
-Este repositório documenta análises controladas de tráfego de rede utilizando o Wireshark.
+Este repositório reúne análises práticas de tráfego de rede utilizando o Wireshark.
 
-O objetivo é observar protocolos fundamentais, interpretar pacotes capturados e relacionar cada análise com conceitos de redes, troubleshooting e segurança defensiva.
+A proposta é observar protocolos fundamentais na prática, interpretar os pacotes capturados e relacionar cada análise com conceitos de redes, troubleshooting e segurança defensiva.
 
-O projeto foi desenvolvido como parte do meu processo de estudo e construção de portfólio em tecnologia, com foco em redes, suporte técnico, infraestrutura e Blue Team/SOC.
+O projeto faz parte do meu processo de estudo e construção de portfólio em tecnologia, com foco em redes, suporte técnico, infraestrutura e Blue Team/SOC.
 
 ## Status
 
 Projeto em andamento.
 
+Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup e ARP/Gateway. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
+
 ## Objetivos
 
 - Identificar pacotes ICMP Echo Request e Echo Reply.
 - Analisar consultas e respostas DNS.
-- Observar requisições ARP e o papel do gateway na rede local.
+- Observar o funcionamento do ARP em uma rede local.
+- Entender a relação entre IP, MAC e gateway.
 - Identificar o TCP Three-Way Handshake.
 - Comparar diferenças entre tráfego HTTP e HTTPS.
 - Observar o funcionamento básico do DHCP.
@@ -31,7 +34,7 @@ Projeto em andamento.
 | 00 | Ambiente e escopo do projeto | Concluído |
 | 01 | ICMP / Ping | Concluído |
 | 02 | DNS / nslookup | Concluído |
-| 03 | ARP / Gateway | Pendente |
+| 03 | ARP / Gateway | Concluído |
 | 04 | TCP Handshake | Pendente |
 | 05 | HTTP vs HTTPS | Pendente |
 | 06 | DHCP | Pendente |
@@ -39,7 +42,7 @@ Projeto em andamento.
 
 ## Metodologia
 
-Cada análise seguirá uma estrutura simples:
+Em cada análise, procuro seguir uma estrutura simples:
 
 1. Definir o objetivo da captura.
 2. Gerar tráfego de rede de forma controlada.
@@ -51,9 +54,11 @@ Cada análise seguirá uma estrutura simples:
 8. Relacionar a análise com redes, troubleshooting e segurança defensiva.
 9. Registrar observações importantes e aprendizados.
 
+A ideia não é apenas mostrar prints do Wireshark, mas explicar o que está acontecendo em cada captura e por que aquilo é relevante em um contexto real de redes e suporte.
+
 ## Ambiente utilizado
 
-O ambiente principal utilizado neste projeto será:
+O ambiente principal utilizado neste projeto é:
 
 - Sistema operacional: Windows
 - Ferramenta principal: Wireshark
@@ -61,7 +66,7 @@ O ambiente principal utilizado neste projeto será:
 - Interface de captura: Wi-Fi
 - Rede: rede doméstica própria/autorizada
 
-Em etapas futuras, poderá ser utilizado um ambiente com máquina virtual Linux para testes mais controlados.
+Em etapas futuras, também poderá ser utilizado um ambiente com máquina virtual Linux para testes mais controlados.
 
 ## Ferramentas utilizadas
 
@@ -98,19 +103,21 @@ casebook-wireshark/
 └── README.md
 ```
 
+A pasta `captures-local/` é usada apenas localmente para armazenar arquivos de captura brutos, como `.pcap` e `.pcapng`. Esses arquivos não são publicados no GitHub.
+
 ## Cuidados de privacidade
 
 Arquivos de captura brutos, como `.pcap` e `.pcapng`, não serão publicados neste repositório, pois podem conter informações sensíveis da rede local.
 
-Esses arquivos serão mantidos apenas localmente na pasta `captures-local/`, que está configurada no `.gitignore`.
+Esses arquivos ficam armazenados apenas localmente na pasta `captures-local/`, que está configurada no `.gitignore`.
 
-Serão publicados apenas prints selecionados e informações parcialmente anonimizadas quando necessário.
+Nos documentos publicados, serão usados apenas prints selecionados, com informações sensíveis parcialmente ocultadas quando necessário, como endereços MAC completos, IPs locais e nomes de dispositivos.
 
 ## Relação com segurança defensiva
 
 A análise de tráfego de rede é uma habilidade importante para áreas como suporte técnico, redes, NOC, Blue Team e SOC.
 
-Ela ajuda a responder perguntas como:
+Mesmo em capturas simples, como ICMP, DNS e ARP, já é possível praticar perguntas importantes:
 
 ```text
 Quem está se comunicando?
@@ -118,6 +125,7 @@ Qual protocolo está sendo usado?
 Qual porta aparece na comunicação?
 O DNS está funcionando?
 Houve resposta do destino?
+Qual IP está associado a qual MAC?
 O comportamento observado faz sentido?
 ```
 
@@ -125,7 +133,6 @@ Essas perguntas são úteis em troubleshooting, investigação de incidentes, an
 
 ## Próximos passos
 
-- Analisar tráfego ARP relacionado ao gateway.
 - Observar o TCP Three-Way Handshake.
 - Comparar tráfego HTTP e HTTPS.
 - Observar o funcionamento básico do DHCP.

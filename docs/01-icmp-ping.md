@@ -4,6 +4,8 @@
 
 Verificar conectividade IP com um destino externo usando o comando `ping` e analisar os pacotes ICMP no Wireshark.
 
+Nesta primeira análise, a ideia foi observar como um teste simples de conectividade aparece na rede e quais informações podem ser interpretadas a partir dos pacotes capturados.
+
 ## Ambiente
 
 * Sistema operacional: Windows
@@ -37,7 +39,9 @@ icmp && ip.addr == 8.8.8.8
 
 ## O que foi observado
 
-Durante a captura, foram observados pacotes ICMP entre o host local e o endereço `8.8.8.8`.
+Durante a captura, apareceram pacotes ICMP entre o host local e o endereço `8.8.8.8`.
+
+O comportamento observado foi o esperado para o comando `ping`: o host local enviou pacotes **Echo Request** para o destino e recebeu pacotes **Echo Reply** como resposta.
 
 Foram identificados:
 
@@ -61,17 +65,24 @@ Nos detalhes do pacote, foi possível visualizar as camadas:
 
 O comando `ping` utiliza o protocolo ICMP para testar conectividade entre dois hosts.
 
-Quando o host local envia um pacote **Echo Request**, ele espera receber um pacote **Echo Reply** do destino. Na captura realizada, foi possível observar esse comportamento: o host local enviou requisições ICMP para `8.8.8.8` e recebeu respostas do destino.
+Na prática, o host local envia uma mensagem **Echo Request** para o destino e aguarda uma mensagem **Echo Reply** como resposta. Na captura realizada, esse fluxo apareceu claramente: o computador enviou requisições ICMP para `8.8.8.8` e recebeu respostas do mesmo endereço.
 
-Esse comportamento indica que havia conectividade IP entre o host local e o destino externo testado.
+Esse resultado indica que havia conectividade IP entre o host local e o destino externo testado.
 
-Também foi possível observar que, embora o IP de destino fosse `8.8.8.8`, o quadro Ethernet utiliza endereços MAC relacionados à comunicação local. Isso reforça a diferença entre endereço IP, usado para identificar origem e destino lógico, e endereço MAC, usado na comunicação dentro do enlace local.
+Um ponto importante observado na análise foi a diferença entre o destino IP e a comunicação local em Ethernet. Embora o IP de destino fosse `8.8.8.8`, o quadro Ethernet utiliza endereços MAC relacionados ao enlace local. Isso acontece porque, para alcançar um destino fora da rede local, o host envia o tráfego para o próximo salto, normalmente o gateway.
+
+Esse detalhe ajuda a reforçar uma ideia importante em redes:
+
+```text
+IP identifica origem e destino lógico da comunicação.
+MAC é usado para entrega dentro do enlace local.
+```
 
 ## Relação com redes e segurança defensiva
 
 A análise de tráfego ICMP é útil em troubleshooting, redes, suporte técnico, NOC e SOC.
 
-Esse tipo de análise pode ajudar a responder perguntas como:
+Mesmo sendo um teste simples, o `ping` ajuda a responder perguntas importantes:
 
 ```text
 O host consegue alcançar o destino?
@@ -80,7 +91,7 @@ O tráfego está saindo pela interface esperada?
 O protocolo observado corresponde ao teste realizado?
 ```
 
-Em segurança defensiva, entender tráfego ICMP ajuda a interpretar testes de conectividade, diagnosticar falhas de comunicação e reconhecer comportamentos básicos de rede.
+Em segurança defensiva, entender ICMP ajuda a interpretar testes de conectividade, diagnosticar falhas de comunicação e reconhecer comportamentos básicos de rede. Esse tipo de base é importante antes de analisar tráfegos mais complexos.
 
 ## Observações importantes
 
@@ -88,23 +99,24 @@ Durante os testes iniciais, a VPN estava ativa e isso dificultou a visualizaçã
 
 A VPN foi desativada para a captura oficial, pois o tráfego poderia ser roteado por uma interface virtual, alterando o caminho dos pacotes e dificultando a análise.
 
-Antes da publicação no GitHub, os prints devem ter informações sensíveis parcialmente ocultadas, como endereços MAC completos, nomes de dispositivos/fabricantes e, se necessário, IPs locais.
+Os prints utilizados na documentação foram anonimizados para ocultar informações sensíveis da rede local, como endereços MAC completos, nomes de dispositivos/fabricantes e partes do IP local.
 
 ## Aprendizados
 
-Nesta análise, foi possível praticar:
+Nesta análise, pratiquei:
 
 * uso do Wireshark para capturar tráfego ICMP;
 * aplicação de filtros de exibição;
 * identificação de pacotes Echo Request e Echo Reply;
 * leitura de informações básicas em IPv4 e ICMP;
-* diferença entre tráfego local em Ethernet e destino lógico em IP;
+* interpretação do campo TTL;
+* diferença entre destino lógico em IP e entrega local em Ethernet;
 * importância de controlar variáveis do ambiente, como o uso de VPN.
 
 ## Conclusão
 
-A captura mostrou com sucesso o funcionamento do comando `ping` na prática.
+A captura mostrou o funcionamento do comando `ping` na prática.
 
-Foram observados pacotes ICMP Echo Request saindo do host local em direção ao endereço `8.8.8.8` e pacotes Echo Reply retornando do destino.
+Foi possível observar pacotes ICMP Echo Request saindo do host local em direção ao endereço `8.8.8.8` e pacotes Echo Reply retornando do destino.
 
-A análise confirmou conectividade IP com o destino externo e reforçou conceitos fundamentais de redes, como ICMP, IPv4, TTL, endereço de origem, endereço de destino e comunicação em camadas.
+A análise confirmou conectividade IP com o destino externo e ajudou a reforçar conceitos fundamentais de redes, como ICMP, IPv4, TTL, endereço de origem, endereço de destino e comunicação em camadas.
