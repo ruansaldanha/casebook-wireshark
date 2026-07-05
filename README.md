@@ -12,7 +12,7 @@ O projeto faz parte do meu processo de estudo e construção de portfólio em te
 
 Projeto em andamento.
 
-Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup e ARP/Gateway. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
+Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway e TCP Handshake. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
 
 ## Objetivos
 
