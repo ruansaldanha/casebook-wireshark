@@ -156,3 +156,63 @@ images/04-tcp/04-tcp-ack-detalhes.png
 ### Observação
 
 Durante a captura, foi possível observar a sequência `SYN`, `SYN, ACK` e `ACK`, que representa o TCP Three-Way Handshake. Após o estabelecimento da conexão, também apareceu tráfego HTTP relacionado à requisição feita com `curl.exe`.
+
+---
+
+## 05 - HTTP vs HTTPS
+
+### Objetivo
+
+Comparar o tráfego HTTP e HTTPS no Wireshark, observando a diferença entre uma comunicação em texto claro e uma comunicação protegida por TLS.
+
+### Comandos utilizados
+
+```powershell
+curl.exe -4 http://example.com
+curl.exe -4 https://example.com
+```
+
+### Filtros utilizados no Wireshark
+
+Para visualizar o tráfego HTTP:
+
+```text
+http
+```
+
+Para visualizar o tráfego HTTPS/TLS:
+
+```text
+tls
+```
+
+Filtro utilizado para isolar o fluxo TLS relacionado ao servidor acessado:
+
+```text
+tls && ip.addr == 172.66.147.243
+```
+
+### Arquivo de captura local
+
+```text
+captures-local/05-http-vs-https.pcapng
+```
+
+### Evidências salvas
+
+```text
+images/05-http-https/01-http-filtro-aplicado.png
+images/05-http-https/02-http-get-detalhes.png
+images/05-http-https/03-http-response-detalhes.png
+images/05-http-https/04-https-filtro-aplicado.png
+images/05-http-https/05-https-client-hello-detalhes.png
+images/05-http-https/06-https-application-data.png
+```
+
+### Observação
+
+Durante a captura HTTP, foi possível visualizar diretamente a requisição `GET / HTTP/1.1` e a resposta `HTTP/1.1 200 OK` no Wireshark.
+
+Na captura HTTPS, o conteúdo da comunicação não apareceu em texto claro. Em vez disso, foram observados pacotes relacionados à negociação TLS, como `Client Hello`, `Server Hello` e `Application Data`. No pacote `Client Hello`, também foi possível observar o SNI indicando o domínio `example.com`.
+
+A principal diferença observada foi que, no HTTP, a requisição e a resposta ficam legíveis na captura. Já no HTTPS, o conteúdo da aplicação fica protegido pelo TLS e aparece como dados criptografados.

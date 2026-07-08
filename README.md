@@ -12,7 +12,7 @@ O projeto faz parte do meu processo de estudo e construção de portfólio em te
 
 Projeto em andamento.
 
-Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway e TCP Handshake. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
+Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway, TCP Handshake, HTTP vs HTTPS. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
 
 ## Objetivos
 
@@ -36,7 +36,7 @@ Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gat
 | 02 | DNS / nslookup | Concluído |
 | 03 | ARP / Gateway | Concluído |
 | 04 | TCP Handshake | Concluído |
-| 05 | HTTP vs HTTPS | Pendente |
+| 05 | HTTP vs HTTPS | Concluído |
 | 06 | DHCP | Pendente |
 | 07 | Conclusão geral | Pendente |
 
@@ -107,9 +107,7 @@ A pasta `captures-local/` é usada apenas localmente para armazenar arquivos de 
 
 ## Cuidados de privacidade
 
-Arquivos de captura brutos, como `.pcap` e `.pcapng`, não serão publicados neste repositório, pois podem conter informações sensíveis da rede local.
-
-Esses arquivos ficam armazenados apenas localmente na pasta `captures-local/`, que está configurada no `.gitignore`.
+Arquivos de captura brutos, como `.pcap` e `.pcapng`, não serão publicados neste repositório, pois podem conter informações sensíveis da rede local. Esses arquivos ficam armazenados apenas localmente na pasta `captures-local/`, que está configurada no `.gitignore`.
 
 Nos documentos publicados, serão usados apenas prints selecionados, com informações sensíveis parcialmente ocultadas quando necessário, como endereços MAC completos, IPs locais e nomes de dispositivos.
 
@@ -133,6 +131,5 @@ Essas perguntas são úteis em troubleshooting, investigação de incidentes, an
 
 ## Próximos passos
 
-- Comparar tráfego HTTP e HTTPS.
 - Observar o funcionamento básico do DHCP.
 - Registrar os principais aprendizados do projeto.
