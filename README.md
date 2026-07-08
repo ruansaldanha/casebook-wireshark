@@ -12,7 +12,7 @@ O projeto faz parte do meu processo de estudo e construção de portfólio em te
 
 Projeto em andamento.
 
-Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway, TCP Handshake, HTTP vs HTTPS. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
+Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway, TCP Handshake, HTTP vs HTTPS, DHCP. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
 
 ## Objetivos
 
@@ -37,7 +37,7 @@ Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gat
 | 03 | ARP / Gateway | Concluído |
 | 04 | TCP Handshake | Concluído |
 | 05 | HTTP vs HTTPS | Concluído |
-| 06 | DHCP | Pendente |
+| 06 | DHCP | Concluído |
 | 07 | Conclusão geral | Pendente |
 
 ## Metodologia
@@ -131,5 +131,4 @@ Essas perguntas são úteis em troubleshooting, investigação de incidentes, an
 
 ## Próximos passos
 
-- Observar o funcionamento básico do DHCP.
 - Registrar os principais aprendizados do projeto.

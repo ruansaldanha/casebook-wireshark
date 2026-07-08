@@ -216,3 +216,54 @@ Durante a captura HTTP, foi possível visualizar diretamente a requisição `GET
 Na captura HTTPS, o conteúdo da comunicação não apareceu em texto claro. Em vez disso, foram observados pacotes relacionados à negociação TLS, como `Client Hello`, `Server Hello` e `Application Data`. No pacote `Client Hello`, também foi possível observar o SNI indicando o domínio `example.com`.
 
 A principal diferença observada foi que, no HTTP, a requisição e a resposta ficam legíveis na captura. Já no HTTPS, o conteúdo da aplicação fica protegido pelo TLS e aparece como dados criptografados.
+
+---
+
+## 06 - DHCP
+
+### Objetivo
+
+Gerar tráfego DHCP para observar o processo de liberação e renovação da configuração IP do host na rede local.
+
+### Comandos utilizados
+
+```powershell
+ipconfig /release
+ipconfig /renew
+```
+
+### Filtro utilizado no Wireshark
+
+```text
+dhcp
+```
+
+### Arquivo de captura local
+
+```text
+captures-local/06-dhcp.pcapng
+```
+
+### Evidências salvas
+
+```text
+images/06-dhcp/01-dhcp-filtro-aplicado.png
+images/06-dhcp/02-dhcp-discover-detalhes.png
+images/06-dhcp/03-dhcp-offer-detalhes.png
+images/06-dhcp/04-dhcp-request-detalhes.png
+images/06-dhcp/05-dhcp-ack-detalhes.png
+```
+
+### Observação
+
+Durante a captura, foi observado o processo de liberação e renovação da configuração IP do host. O pacote `DHCP Release` apareceu após o uso do comando `ipconfig /release`, indicando que a configuração anterior foi liberada.
+
+Em seguida, foi possível observar a sequência principal do DHCP:
+
+```text
+Discover → Offer → Request → ACK
+```
+
+Essa sequência mostra o host procurando um servidor DHCP, recebendo uma oferta de configuração, solicitando o uso dessa configuração e recebendo a confirmação final do servidor.
+
+Nos pacotes analisados, também apareceram informações como endereço IP oferecido, identificador do servidor DHCP, máscara de sub-rede, gateway, DNS e tempo de lease.
