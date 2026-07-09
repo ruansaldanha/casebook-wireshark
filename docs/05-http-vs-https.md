@@ -10,15 +10,16 @@ Essa comparação é importante porque mostra por que o HTTPS é essencial para 
 
 ---
 
-## Ambiente utilizado
+## Ambiente
 
 A captura foi feita em um ambiente local controlado, utilizando:
 
-- Windows;
-- PowerShell;
-- Wireshark;
-- conexão com a internet;
-- acesso ao domínio `example.com`.
+* Sistema operacional: Windows
+* Terminal utilizado: Windows PowerShell
+* Interface utilizada: Wi-Fi
+* Ferramenta principal: Wireshark
+* Rede utilizada: rede doméstica própria/autorizada
+* VPN: desativada durante a captura
 
 O tráfego foi gerado com o comando `curl.exe`, primeiro usando HTTP e depois HTTPS.
 

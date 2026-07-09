@@ -9,7 +9,7 @@ Nesta etapa, a ideia foi observar como um domínio é resolvido para um endereç
 ## Ambiente
 
 * Sistema operacional: Windows
-* Terminal utilizado: Windows PowerShell (x86)
+* Terminal utilizado: Windows PowerShell
 * Interface utilizada: Wi-Fi
 * Ferramenta principal: Wireshark
 * Rede utilizada: rede doméstica própria/autorizada

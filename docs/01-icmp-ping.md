@@ -9,7 +9,7 @@ Nesta primeira análise, a ideia foi observar como um teste simples de conectivi
 ## Ambiente
 
 * Sistema operacional: Windows
-* Terminal utilizado: Windows PowerShell (x86)
+* Terminal utilizado: Windows PowerShell
 * Interface utilizada: Wi-Fi
 * Ferramenta principal: Wireshark
 * Rede utilizada: rede doméstica própria/autorizada

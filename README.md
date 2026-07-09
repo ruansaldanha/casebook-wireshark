@@ -10,9 +10,11 @@ O projeto faz parte do meu processo de estudo e construção de portfólio em te
 
 ## Status
 
-Projeto em andamento.
+Projeto concluído.
 
-Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway, TCP Handshake, HTTP vs HTTPS, DHCP. As próximas etapas serão adicionadas conforme novas capturas forem realizadas e analisadas.
+Foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gateway, TCP Handshake, HTTP vs HTTPS e DHCP.
+
+A partir dessas capturas, o projeto reúne uma visão prática de protocolos fundamentais de rede, conectando teoria, análise de pacotes, troubleshooting e segurança defensiva.
 
 ## Objetivos
 
@@ -38,7 +40,7 @@ Até o momento, foram documentadas análises de ICMP/Ping, DNS/nslookup, ARP/Gat
 | 04 | TCP Handshake | Concluído |
 | 05 | HTTP vs HTTPS | Concluído |
 | 06 | DHCP | Concluído |
-| 07 | Conclusão geral | Pendente |
+| 07 | Conclusão geral | Concluído |
 
 ## Metodologia
 
@@ -66,13 +68,13 @@ O ambiente principal utilizado neste projeto é:
 - Interface de captura: Wi-Fi
 - Rede: rede doméstica própria/autorizada
 
-Em etapas futuras, também poderá ser utilizado um ambiente com máquina virtual Linux para testes mais controlados.
+Em projetos futuros, pretendo utilizar ambientes com máquinas virtuais Linux para testes mais controlados e análises mais próximas de cenários reais de infraestrutura.
 
 ## Ferramentas utilizadas
 
 - Wireshark
 - Windows
-- Windows PowerShell (x86)
+- Windows PowerShell
 - Navegador web
 - Rede doméstica autorizada
 
@@ -131,4 +133,4 @@ Essas perguntas são úteis em troubleshooting, investigação de incidentes, an
 
 ## Próximos passos
 
-- Registrar os principais aprendizados do projeto.
+Com a primeira versão deste projeto concluída, os próximos estudos serão voltados para Linux, logs, troubleshooting e infraestrutura, mantendo a mesma proposta de conectar teoria com prática.

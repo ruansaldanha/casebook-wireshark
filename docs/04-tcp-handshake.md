@@ -9,7 +9,7 @@ Nesta etapa, a ideia foi identificar a sequência inicial de uma conexão TCP: `
 ## Ambiente
 
 * Sistema operacional: Windows
-* Terminal utilizado: Windows PowerShell (x86)
+* Terminal utilizado: Windows PowerShell
 * Interface utilizada: Wi-Fi
 * Ferramenta principal: Wireshark
 * Rede utilizada: rede doméstica própria/autorizada

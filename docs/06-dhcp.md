@@ -10,15 +10,16 @@ Para gerar o tráfego DHCP, liberei a configuração de rede atual do Windows e 
 
 ---
 
-## Ambiente utilizado
+## Ambiente
 
 A captura foi feita em um ambiente local controlado, utilizando:
 
-- Windows;
-- PowerShell;
-- Wireshark;
-- conexão via Wi-Fi;
-- rede local com DHCP ativo.
+* Sistema operacional: Windows
+* Terminal utilizado: Windows PowerShell
+* Interface utilizada: Wi-Fi
+* Ferramenta principal: Wireshark
+* Rede utilizada: rede doméstica própria/autorizada
+* VPN: desativada durante a captura
 
 O serviço DHCP, neste caso, foi fornecido pelo equipamento da rede local, responsável por entregar automaticamente as configurações de rede ao host.
 

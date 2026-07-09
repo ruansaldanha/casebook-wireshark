@@ -9,7 +9,7 @@ A ideia desta etapa foi observar, na prática, como ocorre essa comunicação de
 ## Ambiente
 
 * Sistema operacional: Windows
-* Terminal utilizado: Windows PowerShell (x86)
+* Terminal utilizado: Windows PowerShell
 * Interface utilizada: Wi-Fi
 * Ferramenta principal: Wireshark
 * Rede utilizada: rede doméstica própria/autorizada
